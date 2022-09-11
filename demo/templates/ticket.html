@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+	<head>
+		<title>机场购票管理系统</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="templatemo">
+		<meta charset="UTF-8">
+		<!-- CSS Bootstrap & Custom -->
+		<link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/css/templatemo-misc.css">
+		<link rel="stylesheet" href="../static/css/animate.css">
+		<link rel="stylesheet" href="../static/css/templatemo-main.css">
+		<link rel="stylesheet" href="../static/css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" href="../static/css/mystyle.css">
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="../static/images/ico/favicon.ico">
+
+		<!-- JavaScripts -->
+		<script src="../static/js/jquery-1.10.2.min.js"></script>
+		<script src="../static/js/modernizr.js"></script>
+
+		<style type="text/css">
+			.content{
+				margin-top: 120px;
+			}
+			#select th,#select td{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="home">
+			<div class="site-header">
+				<div class="top-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<div class="left-header">
+									<span><i class="fa fa-phone"></i>153 720 10622</span>
+									<span><i class="fa fa-envelope"></i>1046405331@qq.com</span>
+								</div> <!-- /.left-header -->
+							</div> <!-- /.col-md-6 -->
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-header -->
+				<div class="main-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="logo">
+									<h1><a href="http://127.0.0.1:5000/" title="Dreri">机场购票系统</a></h1>
+								</div> <!-- /.logo -->
+							</div> <!-- /.col-md-3 -->
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.header -->
+			</div> <!-- /.site-header -->
+		</div> <!-- /#home -->
+
+<div class="content">
+	
+
+    <div class="container"> <!--居中，否则表格会紧贴屏幕左边框-->
+        <table class="table table-bordered" id="select">
+            <tr>
+                <th>航班号</th>
+                <th>出发日期</th>
+                <th>购票人身份证/PassportNo</th>
+				<th>座位级别</th>
+				<th>座位号</th>
+                <th>国籍</th>
+				<th>名字</th>
+				<th>联系电话</th>
+            </tr>
+            {% for i in rs %}
+            <tr>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[4] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[5] }}</td>
+                <td>{{ i[7] }}</td>
+                <td>{{ i[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+		
+		<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../static/js/plugins.js"></script>
+		<script src="../static/js/jquery.lightbox.js"></script>
+		<script src="../static/js/bootstrap-datetimepicker.js"></script>
+		<script src="../static/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/custom.js"></script>
+	</body>
+</html>

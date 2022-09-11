@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> 
+<![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> 
+<![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+	<head>
+		<title>机场管理系统</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="templatemo">
+		<meta charset="UTF-8">
+		<!-- CSS Bootstrap & Custom -->
+		<link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/css/templatemo-misc.css">
+		<link rel="stylesheet" href="../static/css/animate.css">
+		<link rel="stylesheet" href="../static/css/templatemo-main.css">
+		<link rel="stylesheet" href="../static/css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrapValidator.css"/>
+		<link rel="stylesheet" href="../static/css/mystyle.css">
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="../static/images/ico/favicon.ico" type="image/x-icon">
+
+		<!-- JavaScripts -->
+		<script src="../static/js/jquery-1.10.2.min.js"></script>
+		<script src="../static/js/modernizr.js"></script>
+		<!--[if lt IE 8]>
+<div style=' clear: both; text-align:center; position: relative;'>
+		<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
+	</div>
+<![endif]-->
+	</head>
+	<body>
+
+		<div id="home">
+			<div class="site-header">
+				<div class="top-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<div class="left-header">
+									<span><i class="fa fa-phone"></i>153 720 10622</span>
+									<span><i class="fa fa-envelope"></i>1046405331@qq.com</span>
+								</div> <!-- /.left-header -->
+							</div> <!-- /.col-md-6 -->
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-header -->
+				<div class="main-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-8">
+								<div class="container">
+									<div class="logo">
+										<h1><a href="#" title="Dreri">机场管理系统</a></h1>
+									</div> <!-- /.logo -->
+								</div>
+							</div> <!-- /.col-md-4 -->
+							
+							<div class="col-md-9 col-sm-6 col-xs-4">
+								<div class="menu text-right hidden-sm hidden-xs" id="nav">
+									<ul>
+										<li><a href="#home">主页</a></li>
+										<li><a href="#add-flight">添加航班</a></li>
+										<li><a href="#delete-flight">删除航班</a></li>
+										<li><a href="#modify-flight">修改班次</a></li>
+										<li><a href="#select-flight">航班查询</a></li>
+										<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">注册<span class="caret"></span></a>
+										            <ul class="dropdown-menu">
+										                <li><a href="#register">中国籍注册</a></li>
+										                <li><a href="#register-foreign">Foreign nationality registration</a></li>
+										            </ul></li>
+										<li><a href="#buy-ticket">购票退票</a></li>
+										<li><a href="#about">团队介绍</a></li>
+									</ul>
+								</div> <!-- /.menu -->
+							</div> <!-- /.col-md-8 -->
+						</div> <!-- /.row -->
+							<div class="responsive-menu text-right visible-xs visible-sm">
+								<a href="#" class="toggle-menu fa fa-bars"></a>
+								<div class="menu">
+									<ul>
+										<li><a href="#home">主页</a></li>
+										<li><a href="#add-flight">添加航班</a></li>
+										<li><a href="#delete-flight">删除航班</a></li>
+										<li><a href="#modify-flight">修改班次</a></li>
+										<li><a href="#select-flight">航班查询</a></li>
+										<li><a href="#register">注册</a></li>
+										<li><a href="#buy-ticket">购票退票</a></li>
+										<li><a href="#about">团队介绍</a></li>
+									</ul>
+								</div> <!-- /.menu -->
+							</div> <!-- /.responsive-menu -->
+					</div> <!-- /.container -->
+				</div> <!-- /.header -->
+			</div> <!-- /.site-header -->
+		</div> <!-- /#home -->
+
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<img src="../static/images/airplane.jpg">
+					<div class="flex-caption">
+						<h2>机场航班购票管理系统展示</h2>
+						<p>欢迎访问我们的作品！</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div id="add-flight" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>增加航班</h2>
+					<span></span>
+				</div>
+				<form action="http://127.0.0.1:5000/addFlight/" method="post" id="addFlight">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">航空公司代码</label>
+							<input type="text" id="company-code-add" name="company-code-add" required/>
+						</p>
+						<p class="form-group"> 
+							<label class="mylabel">出发机场代码</label>
+							<input type="text" id="depart-code-add" name="depart-code-add" required/>
+						</p>
+						<p class="form-group">
+							<label class="mylabel">到达机场代码</label>
+							<input type="text" id="arrive-code-add" name="arrive-code-add" required/>
+						</p>
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="line-code-add" name="line-code-add" required/>
+						</p>
+					</div>
+					<div class="button">
+						<input class="mainBtn" type="submit" name="submit-add" id="submit-add" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+
+				</form>
+		</div>
+		</div>
+
+		<div id="delete-flight" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>删除航班</h2>
+					<span></span>
+				</div> <!-- /.title-section -->
+				<form action="http://127.0.0.1:5000/delFlight" method="post" id="delFlight">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="line-code-del" name="line-code-del" required/>
+						</p>
+					</div>
+					<div class="button-black">
+						<input class="mainBtn" type="submit" name="submit-del" id="submit-del" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+				</form>
+			</div> 
+		</div>
+		
+		<div id="modify-flight" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>添加班次</h2>
+					<span></span>
+				</div>
+				<form action="http://127.0.0.1:5000/flightModify/" method="post" id="flightModify">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="line_code_modify" name="line_code_modify" placeholder="提示:如无班次会自动添加" required />
+						</p>
+						<p class="form-group"> 
+							<label class="mylabel">出发日期</label>
+							<input type="text" id="depart_date_modify" name="depart_code_modify" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">起飞时间</label>
+							<input type="text" id="flytime_modify" name="flytime_modify" 
+							placeholder="请输入4位数字表示时间，例：1830" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">到达时间</label>
+							<input type="text" id="arrive_time_modify" name="arrive_time_modify" 
+							placeholder="请输入5位数字表示时间，首位为是否隔天到达，0表示当天到达，1表示隔天到达例：01830" required />
+						</p>
+						<div class="form-select">
+							<label class="mylabel">班次状态</label>
+							<select class="form-control" id="status" name="status">
+							<option selected>正常</option>
+							<option>晚点</option>
+							<option>取消</option>
+							<option>待定</option>
+							</select>
+						</div>
+						<p class="form-group" style="display: inline-block;width: 45%;">
+							<label class="mylabel">经济舱数量</label>
+							<input type="text" id="eco" name="eco" required />
+						</p>
+						<p class="form-group"style="display: inline-block;width: 45%;float: right;">
+							<label class="mylabel">经济舱票价（元）</label>
+							<input type="text" id="ecoPrice" name="ecoPrice" required />
+						</p>
+						<p class="form-group"style="display: inline-block;width: 45%;">
+							<label class="mylabel">头等舱数量</label>
+							<input type="text" id="lux" name="lux" required />
+						</p>
+						<p class="form-group"style="display: inline-block;width: 45%;float: right;">
+							<label class="mylabel">头等舱票价（元）</label>
+							<input type="text" id="luxPrice" name="luxPrice" required />
+						</p>
+					</div>
+					<div class="button">
+						<input class="mainBtn" type="submit" name="submit-modify" id="submit-modify" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+
+				</form>
+		</div>
+		</div>
+		
+		<div id="del_banci" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>删除班次</h2>
+					<span></span>
+				</div>
+				<form action="http://127.0.0.1:5000/delBanci/" method="post" id="delBanci">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="line_code" name="line_code" required />
+						</p>
+						<p class="form-group"> 
+							<label class="mylabel">出发日期</label>
+							<input type="text" id="depart_date_banci" name="depart_date_banci" required />
+						</p>
+						</div>
+					<div class="button">
+						<input class="mainBtn" type="submit" name="submit-modify" id="submit-modify" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+		
+				</form>
+		</div>
+		</div>
+		
+		<div id="select-flight" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>航班查询</h2>
+					<span></span>
+				</div> <!-- /.title-section -->
+				<form action="http://127.0.0.1:5000/selectFlight/" method="post">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">出发日期</label>
+							<input type="text" id="depart_date_select" name="depart_date_select" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">出发地(城市)</label>
+							<input type="text" id="depart-loc-select" name="depart-loc-select" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">目的地(城市)</label>
+							<input type="text" id="arrive-loc-select" name="line-loc-select" required />
+						</p>
+					</div>
+					<div class="button-black">
+						<input class="mainBtn" type="submit" name="submit-del" id="submit-del" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+				</form>
+			</div> 
+		</div>
+
+		<div id="register" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>中国籍注册</h2>
+					<span></span>
+				</div>
+				<form action="http://127.0.0.1:5000/AddCN/" method="post" id="addcn">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">国籍</label>
+							<input type="text" id="nation" name="nation" value="中国"
+							disabled="disabled"/>
+						</p>
+						<p class="form-group" style="display: inline-block;width: 45%;"> 
+							<label class="mylabel">姓名</label>
+							<input type="text" id="name" name="name" required />
+
+						</p>
+						<p class="form-group" style="display: inline-block;width: 45%;float: right;">
+							<label class="mylabel">姓名拼音</label>
+							<input type="text" id="name_pinyin" name="name_pinyin" required />
+						</p>
+						<p class="form-group" style="display: inline-block;width: 20%;">
+							<label class="mylabel">民族</label>
+							<input type="text" id="minzu" name="minzu" value="汉族" required />
+						</p>
+						<p class="form-group" style="display: inline-block;width: 75%;float: right;">
+							<label class="mylabel">身份证号</label>
+							<input type="text" id="sfz" name="sfz" required />
+						</p>
+						<p class="form-select" style="display: inline-block;width: 20%;">
+							<label class="mylabel">性别</label>
+							<select class="form-control" id="sex" name="sex" >
+							<option selected>男</option>
+							<option>女</option>
+							</select>
+						</p>
+						<p class="form-group" style="display: inline-block;width: 75%;float: right;">
+							<label class="mylabel">联系电话</label>
+							<input type="text" id="phone" name="phone" required />
+						</p>
+					</div>
+					<div class="button">
+						<input class="mainBtn" type="submit" name="submit-modify" id="submit-modify" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+
+				</form>
+		</div>
+		</div>
+		<div id="register-foreign" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>Foreign nationality registration</h2>
+					<span></span>
+				</div>
+				<form action="http://127.0.0.1:5000/AddFR/" method="post" id="addfr">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">Nationality</label>
+							<input type="text" id="nation2" name="nation2" required />
+						</p>
+						<p class="form-group" style="display: inline-block;width: 23%;">
+							<label class="mylabel">Sex</label>
+							<select class="form-control" id="sex" name="sex" >
+							<option selected>Man</option>
+							<option>Woman</option>
+							</select>
+						</p>
+						<p class="form-group" style="display: inline-block;float: right;width: 75%;"> 
+							<label class="mylabel">English Name</label>
+							<input type="text" id="en" name="en" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">PassportNo.</label>
+							<input type="text" id="passport" name="passport" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">VisaNo.</label>
+							<input type="text" id="visa" name="visa" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">Tel</label>
+							<input type="text" id="phone" name="phone" required />
+						</p>
+					</div>
+					<div class="button">
+						<input class="mainBtn" type="submit" name="submit-modify" id="submit-modify" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+		
+				</form>
+		</div>
+		</div>
+		
+
+		<div id="buy-ticket" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>购票</h2>
+					<span></span>
+				</div> <!-- /.title-section -->
+				<form action="" method="post" id="buy" name="buy" onsubmit="prevent();">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="line-code" name="line-code" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">出发日期</label>
+							<input type="text" id="date_buy" name="date_buy" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">身份证号/PassportNo</label>
+							<input type="text" id="sfz" name="sfz" required />
+						</p>
+					</div>
+					<div class="form-select">
+						<label class="mylabel">座位等级</label>
+						<select class="form-control" id="seat" name="seat">
+						<option selected value="1">经济舱</option>
+						<option value="2">头等舱</option>
+						</select>
+					</div>
+					<div class="button-black">
+						<input class="mainBtn" type="submit" name="buy" id="buy" value="购票"  onclick="buysub();">
+						<input class="mainBtn" type="submit" name="back" id="back" value="退票" onclick="backsub();">
+					</div>
+					<div class="button-black">
+						<input class="mainBtn" type="reset" value="清空" id="reset"/>
+					</div>
+				</form>
+			</div> 
+		</div>
+		
+		
+		<div id="select-book" class="section-cotent">
+			<div class="container">
+				<div class="title-section text-center">
+					<h2>购票信息查询</h2>
+					<span></span>
+				</div> 
+				<form action="http://127.0.0.1:5000/bookticket/" method="post">
+					<div class="myform">
+						<p class="form-group">
+							<label class="mylabel">出发日期</label>
+							<input type="text" id="book_date" name="book_date" required />
+						</p>
+						<p class="form-group">
+							<label class="mylabel">航班号</label>
+							<input type="text" id="book_code" name="book_code" required />
+						</p>
+					</div>
+					<div class="button-black">
+						<input class="mainBtn" type="submit" name="submit-del" id="submit-del" value="提交">
+						<input class="mainBtn" type="reset" value="清空" />
+					</div>
+				</form>
+			</div> 
+		</div>
+		
+<div id="about" class="section-cotent">
+	<div class="container">
+		<div class="title-section text-center">
+			<h2>团队介绍</h2>
+			<span></span>
+		</div> <!-- /.title-section -->
+		<div class="row">
+			<div class="our-team">
+				<div id="" style="margin-bottom: 50px;">
+					
+
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-1.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>罗思远</h5>
+							<span>202012213502011</span>
+							<p>代码实现、数据库设计</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-2.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>王乐昕</h5>
+							<span>202012213502012</span>
+							<p>代码实现、数据库设计</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-3.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>张启航</h5>
+							<span>202012213502015</span>
+							<p>概念结构设计、逻辑结构设计</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+								</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-4.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>徐正豪</h5>
+							<span>202012213502016</span>
+							<p>概念结构设计、逻辑结构设计</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-5.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>雷红莲</h5>
+							<span>202012213502030</span>
+							<p>文档编写、物理设计和实施</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+				<div class="col-md-4 col-sm-6">
+					<div class="team-member">
+						<div class="member-img">
+							<img src="../static/images/team/member-6.jpg">
+						</div>
+						<div class="inner-content">
+							<h5>王雨浩</h5>
+							<span>202012210604018</span>
+							<p>文档编写、物理设计和实施</p>
+						</div>
+					</div> <!-- /.team-member -->
+				</div> <!-- /.col-md-4 -->
+			</div> <!-- /.our-team -->
+		</div> <!-- /.row -->
+	</div> <!-- /.container -->
+</div> <!-- /#about -->
+
+
+		<div class="site-footer">
+			<div class="container">
+				<div class="go-top">
+					<a href="#" id="go-top">
+						<i class="fa fa-angle-up"></i>
+						Back to Top
+					</a>
+				</div>
+			</div> <!-- /.container -->
+		</div> <!-- /.site-footer -->
+
+		<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../static/js/plugins.js"></script>
+		<script src="../static/js/jquery.lightbox.js"></script>
+		<script src="../static/js/bootstrap-datetimepicker.js"></script>
+		<script src="../static/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/bootstrapValidator.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/custom.js"></script>
+
+
+	</body>
+</html>
